@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+    <div class="col-lg-6 mx-auto my-2 p-3 bg-light border rounded">
+        <h1>Viewing task</h1>
+        <h3 class="fs-6 fw-light">ID: <%= task.id %></h3>
+        <h2><%= task.task %></h2>
+        <p class="fw-light">Added by - <%= task.username %></p>
+        <div class="d-flex justify-content-between">
+            <a href="/tasks/<%= task.id %>/edit"><button class="btn btn-lg btn-warning">Edit</button></a>
+            <form method="POST" action="/tasks/<%= task.id %>?_method=DELETE">
+                <button class="btn btn-lg btn-danger">Delete</button>
+            </form>
+            <a href="/tasks"><button class="btn btn-lg btn-primary">Tasks list</button></a>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

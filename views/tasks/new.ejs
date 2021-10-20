@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+    <div class="col-lg-6 mx-auto my-2 p-3 bg-light border rounded">
+        <h1>New task</h1>
+        <form action="/tasks" method="post" id="new-task">
+            <section class="input-group pb-3 px-4">
+                <label for="username" class="input-group-text">Enter username</label>
+                <input type="text" placeholder="username" name="username" class="form-control">
+            </section>
+            <section class="input-group pb-3 px-4">
+                <label for="task" class="input-group-text">Enter a task</label>
+                <textarea name="task" id="" cols="30" rows="3" placeholder="enter a task" class="form-control"></textarea>
+            </section>
+        </form>
+        <div class="d-flex px-4 justify-content-between">
+            <button form="new-task" class="btn btn-lg btn-success">Add task</button>
+            <a href="/tasks"><button class="btn btn-lg btn-primary">Tasks list</button></a>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container">
+    <div class="col-lg-6 mx-auto my-2 p-3 bg-light border rounded">
+        <h1>My tasks</h1>
+        <ol>
+            <% for(let task of tasks) { %>
+            <li>
+                <div class="d-flex justify-content-between">
+                <p>
+                    <%= task.task %> - <%= task.username %>
+                </p>
+                <p>
+                    <a href="/tasks/<%= task.id %>" class="fst-italic">View details</a>
+                </p>
+                </div>
+            </li>
+            <% } %>
+        </ol>
+        <div class="d-flex justify-content-center">
+            <a href="/tasks/new"><button class="btn btn-lg btn-success">Add a new task</button></a>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
